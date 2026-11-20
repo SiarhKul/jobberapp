@@ -97,12 +97,12 @@ services:
   gateway:
     container_name: gateway_container
     build:
-      context: ./server/1-gateway-service
+      context: ./server/jobber-gateway-service
       dockerfile: Dockerfile.dev
     restart: always
     ports:
       - "4000:4000"
-    env_file: ./server/1-gateway-service/.env
+    env_file: ./server/jobber-gateway-service/.env
     environment:
       - ENABLE_APM=0
       - GATEWAY_JWT_TOKEN=1282722b942e08c8a6cb033aa6ce850e
@@ -131,12 +131,12 @@ services:
   notifications:
     container_name: notification_container
     build:
-      context: ./server/2-notificatin-server
+      context: ./server/jobber-notification-server
       dockerfile: Dockerfile.dev
     restart: always
     ports:
       - "4001:4001"
-    env_file: ./server/2-notificatin-server/.env
+    env_file: ./server/jobber-notification-server/.env
     environment:
       - ENABLE_APM=0
       - NODE_ENV=development
