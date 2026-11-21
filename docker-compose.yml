@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   redis:
     container_name: redis_container
@@ -72,6 +70,10 @@ services:
       xpack.security.authc.api_key.enabled: "true"
       xpack.monitoring.collection.enabled: "true"
       xpack.security.enrollment.enabled: "true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     ports:
       - "9200:9200"
       - "9300:9300"
