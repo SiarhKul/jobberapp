@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:4000
-@urlPath = api/v1/gateway/auth
-
+@urlPath = api/gateway/v1/auth
+# /api/gateway/v1/auth/signup
 POST {{baseUrl}}/{{urlPath}}/signup
 Content-Type: application/json
 Accept: application/json
@@ -11,5 +11,5 @@ withCredentials: true
 	"email": "sunny@test.com",
 	"password": "qwerty",
 	"country": "Germany",
-	"profilePicture": "data:image/jpeg;base64,"
+	"profilePicture": "data:image/jpeg;base64,12345"
 }
